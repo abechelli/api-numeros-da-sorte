@@ -15,13 +15,13 @@ function gerarNumerosDaSorte(qtd = 6, min = 1, max = 60) {
   return Array.from(numeros).sort((a, b) => a - b);
 }
 
-app.get("/numeros-da-sorte", (req, res) => {
+app.get("/random", (req, res) => {
   const numeros = gerarNumerosDaSorte();
   res.json({ message: numeros });
 });
 
 app.get("/", (req, res) => {
-  res.send("Use /numeros-da-sorte para obter seus números da sorte!");
+  res.send("Use '/random' para obter seus números da sorte!");
 });
 
 app.listen(PORT, () => {
